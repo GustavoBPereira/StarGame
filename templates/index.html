@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Star Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <div class="container">
+            <h1>What is the correct height of this character?</h1>
+            <h1 class="text-center">{{ dict_people['name'] }}</h1>
+        </div>
+        
+        <div class="container">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        {% for alternative in range(0,4) %}
+                            {% if alternative == secret_pos_correct %}
+                                <th><a class="text-success text-center" href="{{ url_for('right')}}"><h2>{{ dict_people['height'] }}</h2></a></th>
+                            {% else %}
+                                <th><a class="text-success text-center" href="{{ url_for('wrong', correct=dict_people['height'], name=dict_people['name'])}}"><h2>{{ wrong_alternatives[alternative] }}</h2></a></th>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    
+</body>
+</html>

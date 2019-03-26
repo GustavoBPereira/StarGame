@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Star Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Wrong Answer</h1>
+
+        <h2>The correct height of {{ name }} is {{ correct }}</h2>
+        <a href="{{ url_for('index')}}"><button type="button" class="btn btn-dark" id="button-nav"> Play Again </button></a>
+    </div>
+</body>
+</html>
